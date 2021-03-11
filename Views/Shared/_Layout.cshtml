@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OnlineBookstore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/6493d9a2ec.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Adds cart summary-->
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">Hami Reads</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-1 p-1">
+        <div id="motto" class="col-2">
+            <h1>A Book A Day</h1>
+            <!--Nav bar with various categories-->
+            <vc:navigation-menu />
+        </div>
+        <div class="col-10">
+            <!--Html views will  go here-->
+            @RenderBody()
+        </div>
+    </div>
+
+
+</body>
+</html>

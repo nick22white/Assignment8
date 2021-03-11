@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "A Book A Day";
+}
+
+@model ProjectListViewModel
+<!--
+    New Bootstrap:
+        table-hover
+        thead-dark
+        table-secondary
+-->
+<div>
+    <!--Bootstrap to create a table-->
+   
+    @foreach (var x in Model.Books)
+    {
+        <partial name="BookCategory" model="x" />
+    }
+
+</div>
+
+<!--Calls our tag helper to make nav-->
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+     page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
+     class="btn-group pull-right m-1"></div>
